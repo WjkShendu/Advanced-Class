@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>倒计时秒杀</title>
+		<link rel="stylesheet" type="text/css" href="css/miao.css"/>
+		<script src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		 <div class="mp-content">
+		    <ul class="itemlist border-list" id="anti-encrypt" >
+			    <li class="mp-single-item" style="bottom: 0px; z-index: 1;">
+			      	<div class="item-info">
+				        <img data-src="tata.jpg" class="item-logo" src="img/tata.jpg" style="display: inline;" width="120" height="60">    
+				        <h4 class="item-discount">秒杀价<em>3.8元</em>&nbsp; &nbsp; &nbsp;&nbsp;原价：98元</h4>
+				        <h4 class="item-stitle">Tata-上品折扣1-5折 京10店配货</h4>
+				        <p class="item-time" id="item-time">离开始: 0天23时25分20秒</p>
+				        <p class="item-source"><span class="item-source-inner">上品折扣</span></p> 
+				        <span id="item-his-safe" class="item-his-safe" style="display:none;"></span>
+			    	</div> 
+				    <div class="item-pic">
+				      <img class="load-bear" src="img/miao.jpg" style="display: inline;" width="440" height="180"> 
+				    </div>
+				    <!--<a href="####" target="_blank" class="mp-item-link" id="mp-item-link" title="Tata-上品折扣1-5折 京10店配货" data-click="{time:1414986097, item:'2839496677'}" onclick="buyItem();return false;"></a>-->
+			    </li>
+		  </ul>
+		</div>
+	</body>
+</html>
+<script>
+	$(function(){
+		function aaa(){
+			$.ajax({
+				url : "http://127.0.0.1:8888/",
+				success :function(response){
+					var Now = JSON.parse(response);
+					var Time = new Date();
+					//相差毫秒值
+					var t = Now - Time.getTime();
+					if (t<=0) {
+						$("#item-time").css("background","red").text("秒杀中");
+						clearInterval(timer);
+						return;
+					}
+					//转换成天数
+					var day = parseInt(t / (24 * 60 * 60 * 1000));
+					//取余
+					t = t % (24 * 60 * 60 * 1000);
+					//转换成小时
+					var hours = parseInt(t / (60 * 60 * 1000));
+					//取余
+					t = t % (60 * 60 * 1000);
+					//转换成分钟
+					var min = parseInt(t / (60 * 1000));
+					//取余
+					t = t % (60 * 1000);
+					//转换成秒
+					var s = parseInt(t / 1000); 
+					$("#item-time").html("离开始: "+day+"天"+hours+"时"+min+"分"+s+"秒");
+				}
+			})
+		}
+		var timer = setInterval(aaa,1000);
+	})
+</script>

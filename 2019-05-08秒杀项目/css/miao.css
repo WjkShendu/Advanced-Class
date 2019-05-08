@@ -1,0 +1,28 @@
+*{margin: 0;padding: 0;}
+ol, ul {list-style: none;}
+/*大盒子样式*/
+.mp-content {margin: 30px auto;width: 715px;}
+/*li展示栏样式*/
+.mp-content .itemlist .mp-single-item{position: relative;overflow:hidden;border: 1px solid #ccc;width: 713px;height: 200px;bottom: 210px;margin-bottom: 10px;position: relative;background-color: #fff;}
+/*秒杀栏,左侧样式*/
+.mp-content .mp-single-item .item-info {background: #fff;float: left;width: 237px;text-align: center;margin: 0 auto;padding: 15px 0;}
+/*秒杀栏,左侧img样式*/
+.mp-content .mp-single-item .item-info img {width: 86px;height: 43px;}
+/*秒杀栏,左侧秒杀价样式*/
+.mp-content .mp-single-item .item-info .item-discount {color: #888;font-size: 14px;padding: 0;overflow: hidden;margin:3px 0;}
+/*秒杀栏,左侧原价样式*/
+.mp-content .mp-single-item .item-info .item-discount em {font-size: 30px;font-style: normal;color: #d22635;}
+/*秒杀栏,折扣价样式*/
+.mp-content .mp-single-item .item-info .item-stitle {color: #333;font-size: 14px;height: 18px;text-overflow: ellipsis;-o-text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin:10px 0 0 0;padding:0;}
+/*秒杀栏,距离秒杀倒计时样式*/
+.mp-content .mp-single-item .item-info .item-time {font-size: 12px;color: #fff;line-height: 20px;background-color: #999;padding: 0 15px;display: inline-block;-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
+/*秒杀栏,上品折扣样式*/
+.mp-content .mp-single-item .item-info .item-source {font-size: 12px;position: relative;color: #d22635;display: block;margin:0;padding:0;}
+/*右侧图片大盒子样式*/
+.mp-content .mp-single-item .item-pic {width: 474px;height: 198px;padding: 1px;float: right;position: relative;}
+/*右侧图片样式*/
+.mp-content .mp-single-item .item-pic img {width: 100%;height: 100%;}
+/*img中class为load-bear的元素样式*/
+img.load-bear{background: url("../img/loading.gif") center center no-repeat;}
+.mp-content .mp-single-item .mp-item-link {position: absolute;display: block;top: 0;left: 0;width: 713px;height: 200px;background: #fff;opacity: 0;filter: alpha(opacity=0);}
+
